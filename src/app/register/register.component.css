@@ -1,0 +1,22 @@
+section{
+    background-image: url("https://i.pinimg.com/originals/4d/60/a2/4d60a275503fca504fd6dfea91927194.jpg");
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    
+
+}
+.container{
+    background: transparent;
+    backdrop-filter: blur(50px);
+    border: 2px solid #fff;
+    border-radius: 20px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 500px;
+    padding: 20px;
+}

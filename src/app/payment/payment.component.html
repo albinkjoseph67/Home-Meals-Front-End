@@ -1,0 +1,63 @@
+<div class="container"> 
+    
+          <div class=" p-5 ms-3">
+            <div >
+              <h1 class="main text-primary fs-5" id="staticBackdropLabel"><b>Payment Info</b>
+                <button class="main" type="button" routerLink="/myorders" class="btn btn-secondary ms-3 " data-bs-dismiss="modal">Close</button>
+
+            </h1>
+
+            </div>
+            <div class=" p-2 ">
+              <form  class="border p-2">
+                <h5 class="mb-2">Customer Details</h5>
+                <div class="mb-2">
+                    <input type="text" class="form-control" placeholder="Customer Name">
+                </div>
+                <div class="mb-2">
+                    <input type="text" class="form-control" placeholder="Customer Address">
+                </div>
+                <div class="mb-2">
+                    <input type="text" class="form-control" placeholder="Customer Pincode">
+                </div>
+                <div class="mb-2">
+                    <input type="text" class="form-control" placeholder="Customer Mobile">
+                </div>
+                <div class="mb-2">
+                    <input type="text" class="form-control" placeholder="Customer Email">
+                </div>
+                </form>
+    
+    
+              <hr>
+              <h5 class="mb-2 text-primary">Payment Details</h5>
+              <form class="border p-2">
+                <div class="mb-2">
+                    <input type="text" class="form-control" placeholder="Card Holder Name">
+                </div>
+                <div class="mb-2">
+                    <input type="text" class="form-control" placeholder="Card Number">
+                </div>
+                
+              </form>
+            </div>
+    
+    
+            <div class="">
+              <div   class="row mt-2">
+                <div class="col-4-md-3 ">
+
+                </div>
+                <div class="main2 col-4-md-3 ">
+                    <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+
+                </div>
+                <div class="col-4-md-3 ">
+
+                </div>
+              </div>
+              
+            </div>
+          </div>
+</div> 
+  

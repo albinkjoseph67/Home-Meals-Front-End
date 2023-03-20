@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Bebas+Neue&family=Bungee&family=Dancing+Script&family=Fasthand&family=Island+Moments&family=Josefin+Sans:wght@100&family=Michroma&family=Playfair+Display&family=Roboto:wght@100&family=Russo+One&family=Shalimar&family=Ubuntu:wght@300&display=swap');
+.heading{
+    font-family: 'Dancing Script', cursive;
+}

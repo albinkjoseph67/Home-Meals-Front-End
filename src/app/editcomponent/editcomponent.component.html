@@ -1,0 +1,61 @@
+<div class="main"> 
+    
+    <form class="container " (ngSubmit)="updateItem()" [formGroup]="updateitemform" >
+        <h1>Edit Item</h1>
+        
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Quantity</label>
+          <input name="qty" formControlName="qty"  type="number" class="form-control" placeholder="{{viewItem.qty}}" aria-describedby="emailHelp">
+          <div *ngIf="this.updateitemform.get('qty')?.errors&&this.updateitemform.get('qty')?.touched" class="text-danger">Invalid Id</div>
+
+        </div>
+         <!--  -->
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Id</label>
+            <input name="id" formControlName="id"  type="number" class="form-control" placeholder="{{viewItem.id}}" aria-describedby="emailHelp">
+            <div *ngIf="this.updateitemform.get('id')?.errors&&this.updateitemform.get('id')?.touched" class="text-danger">Invalid Id</div>
+
+          </div>
+           <!--  -->
+           <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Item Name</label>
+            <input name="iname" formControlName="iname" placeholder="{{viewItem.iname}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div *ngIf="this.updateitemform.get('iname')?.errors&&this.updateitemform.get('iname')?.touched" class="text-danger">Invalid name</div>
+    
+          </div>
+           <!--  -->
+           <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Item description</label>
+            <textarea name="des" formControlName="des" placeholder="{{viewItem.des}}" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <div *ngIf="this.updateitemform.get('des')?.errors&&this.updateitemform.get('des')?.touched" class="text-danger">Invalid description</div>
+    
+          </div>
+          <!--  -->
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Image</label>
+            <input name="img" formControlName="img" placeholder="{{viewItem.img}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div *ngIf="this.updateitemform.get('img')?.errors&&this.updateitemform.get('img')?.touched" class="text-danger">Invalid image</div>
+    
+          </div>
+          <!--  -->
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Food Type</label>
+            <input name="type" formControlName="type" placeholder="{{viewItem.type}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div *ngIf="this.updateitemform.get('type')?.errors&&this.updateitemform.get('type')?.touched" class="text-danger">Invalid type</div>
+    
+            
+          </div>
+          <!--  -->
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Price</label>
+            <input name="price" formControlName="price" placeholder="{{viewItem.price}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div *ngIf="this.updateitemform.get('price')?.errors&&this.updateitemform.get('price')?.touched" class="text-danger">Invalid price</div>
+    
+            
+          </div>
+          
+          <button  class="btn btn-primary m-3">Update</button>
+    </form>
+    
+    
+</div > 

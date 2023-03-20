@@ -1,0 +1,58 @@
+<div class="row mt-5">
+    
+    <div class="col-lg-8  border rounded p-3 mt-5" id="col">
+        <button  class="btn btn-success m-3 ms-2 " routerLink="/admin" >Close</button>&nbsp;
+
+         <table>
+            
+             <thead>
+                 <tr>
+                     <th>User Name</th>
+                     <th>User Email</th>
+
+                     <th>Ordered Item</th>
+                     <!-- <th>Product Image</th>
+                     <th>Type</th> -->
+                     <th>Price</th>
+
+                     <!-- <th>Action</th> -->
+         
+         
+                 </tr>
+             </thead>
+             <tbody *ngFor="let item of items">
+                 <tr>
+                      <td >{{item.username}}</td>
+                      <td >{{item.email}}</td>
+
+                     <td>{{item.orders[0]?.iname}},{{item.orders[1]?.iname}},{{item.orders[2]?.iname}},{{item.orders[3]?.iname}},{{item.orders[4]?.iname}}</td>
+                     <!-- <td><img height="85px" width="105px" src="" alt=""></td> -->
+                     <!-- <td>item.des</td>
+                      <td>item.type</td> -->
+                     <td>{{item.orders[0]?.price}},{{item.orders[1]?.price}},{{item.orders[2]?.price}},{{item.orders[3]?.price}},{{item.orders[4]?.price}}/-</td>  
+
+                     <!-- <td>
+
+             </td> -->
+             </tr>
+             </tbody>
+             <!-- <tbody *ngFor="let order of item.orders">
+                <tr>
+                     <td >{{order.iname}}</td>
+                    <td></td>
+                    <td><img height="85px" width="105px" src="" alt=""></td>
+                    <td>item.des</td>
+                    <td>item.type</td>
+                    <td>item.price/-</td>
+
+                    <td>
+
+            </td>
+            </tr>
+            </tbody> -->
+
+
+
+             </table>
+             </div>
+</div>

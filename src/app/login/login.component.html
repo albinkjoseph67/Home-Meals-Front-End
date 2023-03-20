@@ -1,0 +1,30 @@
+<section>
+    
+    <div class="row">
+        
+        <div class="container  ">
+            <h1 class="text-center p-5 text-success">Enter Your Details For Login</h1>
+            <form (ngSubmit)="login()" [formGroup]="loginform">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label text-white">Email address / Phone number</label>
+                  <input name="email" formControlName="email" type="text" class="form-control" >
+                  <div *ngIf="this.loginform.get('email')?.errors&&this.loginform.get('email')?.touched" class="text-danger">Invalid email / phone number</div>
+                  
+                </div>
+                
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label text-white">Enter Password</label>
+                    <input name="pswd" formControlName="pswd" type="password" class="form-control" id="exampleInputPassword1">
+                  <div *ngIf="this.loginform.get('pswd')?.errors&&this.loginform.get('pswd')?.touched" class="text-danger">Invalid password</div>
+
+                  </div>
+                  <div id="emailHelp" class="form-text text-white">We'll never share your email/password with anyone else.</div><br>
+                  
+                  <div class="class text-danger">{{errorMsg}}</div><br>
+                
+                <button  type="submit" class="btn btn-primary ">Submit</button>
+              </form>
+        </div >
+        
+    </div >
+</section >

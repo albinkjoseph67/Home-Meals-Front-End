@@ -1,0 +1,25 @@
+<!--  -->
+<ul class="nav ">
+  <li class="nav-item ">
+    
+<div class="container "><button class="btn btn-warning me-2" routerLink="/myorders" ><b>My Orders</b></button> 
+<button (click)="logout()" type="button" class="btn btn-success ">LOGOUT</button></div> 
+
+
+  </li>
+  
+</ul>
+
+<!--  -->
+<div class=" row py-5" >
+    <div class="card mt-5 m-5 " style="width: 18rem;" *ngFor="let item of items">
+        <img  [src]="item.img" class="card-img-top mt-2" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{item.iname}}</h5>
+          <p class="card-text">{{item.des.slice(0,105)}}...</p>
+          <h4 class="card-title text-danger">Price : {{item.price}}</h4>
+
+          <a  (click)="addToCart(item,item.id)" class="btn btn-primary">Add to Order List</a>
+        </div>
+      </div>
+</div >

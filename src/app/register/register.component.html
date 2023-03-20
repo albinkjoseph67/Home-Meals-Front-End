@@ -1,0 +1,32 @@
+<section>
+    
+    <div class="row">
+        
+        <div class="container  ">
+            <h1 class="text-center p-5 text-success">Enter Your Details For Registration</h1>
+            <form (ngSubmit)="register()" [formGroup]="registerform">
+                <div class="mb-3">
+                  <label  class="form-label text-white">Full Name</label>
+                  <input name="uname" formControlName="uname" type="text"  class="form-control" >
+                  <div *ngIf="this.registerform.get('uname')?.errors&&this.registerform.get('uname')?.touched" class="text-danger">Invalid Name</div>
+                </div>
+                <div class="mb-3">
+                  <label  class="form-label text-white">Email / PhoneNumber</label>
+                  <input name="email" formControlName="email" type="text"  class="form-control" >
+                  <div *ngIf="this.registerform.get('email')?.errors&&this.registerform.get('email')?.touched" class="text-danger">Invalid Email / Number</div>
+                  
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label text-white">Create New Password</label>
+                    <input name="pswd" formControlName="pswd" type="password"  class="form-control" id="exampleInputPassword1">
+                  <div *ngIf="this.registerform.get('pswd')?.errors&&this.registerform.get('pswd')?.touched" class="text-danger">Invalid Password</div>
+
+                  </div>
+                  <div id="emailHelp" class="form-text text-white">We'll never share your email/password with anyone else.</div><br>
+                
+                <button type="submit" class="btn btn-primary ">Submit</button>
+              </form>
+        </div >
+        
+    </div >
+</section >

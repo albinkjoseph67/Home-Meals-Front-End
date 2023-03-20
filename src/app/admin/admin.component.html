@@ -1,0 +1,130 @@
+
+
+<div class="main">
+
+    
+       <div class="row mt-5">
+           <div class="col-lg-8  border rounded p-3 mt-5" id="col">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Product Image</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Price</th>
+
+                            <th>Action</th>
+                
+                
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let item of items">
+                        <tr>
+                             <td>{{item.id}}</td>
+                            <td>{{item.iname}}</td>
+                            <td><img height="85px" width="105px" [src]="item.img" alt=""></td>
+                            <td>{{item.des.slice(0,150)}}...</td>
+                            <td>{{item.type}}</td>
+                            <td>{{item.price}}/-</td>
+
+                            <td>
+                    <button  class="btn btn-success ms-2 " routerLink="/edit/{{item.id}}" >Edit</button>&nbsp;
+                    <button (click)="removeItem(item.iname)" class="btn btn-danger mt-2 ms-2 ">Delete</button></td>
+                
+                        </tr>
+                       
+                    </tbody>
+                </table>
+    
+                    <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Item</button>
+                    <button class="btn btn-info ms-3 mt-2" routerLink="/viewallorders">View All Orders</button>
+
+                    <button  (click)="logout()" type="button" class="btn btn-success mt-2 ms-3 ">LOGOUT</button>
+
+                <!-- <div class="modal-dialog modal-dialog-scrollable"> -->
+
+                    <form (ngSubmit)="additem()" [formGroup]="additemform">
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog  ">
+                            <div class="modal-content  ">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">New Dish</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <!--  -->
+                                <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label">Quantity</label>
+                                  <input name="qty" formControlName="qty" type="number" class="form-control"  aria-describedby="emailHelp">
+                                  <div *ngIf="this.additemform.get('qty')?.errors&&this.additemform.get('qty')?.touched" class="text-danger">Invalid Quantity</div>
+
+                                </div>
+                                <!--  -->
+                                <!--  -->
+                                <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label">Id</label>
+                                  <input name="id" formControlName="id" type="number" class="form-control"  aria-describedby="emailHelp">
+                                  <div *ngIf="this.additemform.get('id')?.errors&&this.additemform.get('id')?.touched" class="text-danger">Invalid Id</div>
+
+                                </div>
+                                <!--  -->
+                                <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label">Item Name</label>
+                                  <input name="iname" formControlName="iname" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                  <div *ngIf="this.additemform.get('iname')?.errors&&this.additemform.get('iname')?.touched" class="text-danger">Invalid Name</div>
+
+                                </div>
+                                <!--  -->
+                                <div class="mb-3">
+                                  <label for="exampleFormControlTextarea1" class="form-label">Item description</label>
+                                  <textarea name="des" formControlName="des" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                  <div *ngIf="this.additemform.get('des')?.errors&&this.additemform.get('des')?.touched" class="text-danger">Invalid Description</div>
+
+                                </div>
+                                <!--  -->
+                                <div class="mb-3">
+                                  <label for="exampleFormControlTextarea1" class="form-label">Image</label>
+                                  <input name="img" formControlName="img" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                  <div *ngIf="this.additemform.get('img')?.errors&&this.additemform.get('img')?.touched" class="text-danger">Invalid Image</div>
+
+                                </div>
+                                <!--  -->
+                                <div class="mb-3">
+                                  <label for="exampleFormControlTextarea1" class="form-label">Food Type</label>
+                                  <input name="type" formControlName="type" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                  <div *ngIf="this.additemform.get('type')?.errors&&this.additemform.get('type')?.touched" class="text-danger">Invalid Foodtype</div>
+
+                                  
+                                </div>
+                                <!--  -->
+                                <div class="mb-3">
+                                  <label for="exampleFormControlTextarea1" class="form-label">Price</label>
+                                  <input name="price" formControlName="price" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                  <div *ngIf="this.additemform.get('price')?.errors&&this.additemform.get('price')?.touched" class="text-danger">Invalid Price</div>
+
+                                  
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                
+                                <button  class="btn btn-primary">Add</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </form >
+                <!-- </div > -->
+                <!-- Scrollable modal -->
+
+
+                
+
+               
+           </div >
+           
+           
+       </div >
+
+</div> 

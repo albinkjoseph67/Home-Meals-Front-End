@@ -1,0 +1,88 @@
+<!-- empty cart -->
+<div *ngIf="myOrders.length==0" class="container mt-5">
+    <div class="row mt-5 ">
+        <div class="col mt-5 text-center">
+            <!-- empty cart image -->
+
+            <img style="height: 300px;"
+                src="https://www.goodfreephotos.com/albums/vector-images/shopping-cart-vector-clipart.png"
+                alt="empty Cart image">
+            <h3 class="text-primary mt-5">Your Cart Is Empty</h3>
+            <button routerLink="/dashboard" class="btn btn-primary mb-5 mt-2">Shop More</button>
+
+
+        </div>
+    </div>
+
+</div>
+
+<!-- cart design -->
+<div *ngIf="myOrders.length!==0"  class="container mb-5 mt-5">
+    <div  class="row mt-5">
+        <div  class="col-lg-8 border rounded p-3 mt-5">
+            <!-- cart table1 -->
+            <table  class="table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Product Image</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Action</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of myOrders; let i=index" >
+                        <th>{{i+1}}</th>
+                        <th>{{product.iname}}</th>
+                        <th>
+                            <img class="ms-5" height="80px" width="150px" [src]="product.img" alt="Product image">
+                        </th>
+                        <td>
+                            <div class="b1">
+                                <button (click)="increment(product.id,product.qty)"   type="button"  class="btn btn-info"> <i class="fa fa-plus"></i> </button>
+                                <span >{{product.qty}}</span>
+                                <button (click)="decrement(product.id,product.qty)"   type="button"  class="btn btn-secondary"> <i class="fa fa-minus"></i> </button>
+
+                            </div>
+                        </td>
+                        <th>
+                              {{product.qty*product.price | number}}
+                        </th>
+                        <th>
+                            <a  (click)="removeItem(product.qty,product.id,product.iname,product.img,product.type,product.price)" class="text-danger btn"> <i
+                                    class=" fa-solid fa-trash"></i></a>
+                        </th>
+                    </tr>
+
+
+ 
+                </tbody>
+            </table>
+            <div style="float: right;">
+                <!-- <button  class="btn btn-danger ms-5 ">Empty Orders</button> -->
+                <button routerLink="/dashboard" class="btn btn-info ms-5 ">Order More</button>
+            </div>
+
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3  rounded p-3 mt-5 text-center">
+            <div>
+                
+                <h5  class="animate__animated animate__heartBeat animate__delay-2s"><b>Grant Total : </b> <span
+                        class="text-danger fw-bolder fs-2" >{{totall}}</span></h5>
+            </div>
+            <hr>
+
+            <div class="mt-5">
+
+                <button routerLink="/payment" style="float: right;" class="btn btn-success "data-bs-toggle="modal" data-bs-target="#checkoutModal">Check Out</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>

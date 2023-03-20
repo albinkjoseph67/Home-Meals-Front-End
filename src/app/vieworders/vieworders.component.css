@@ -1,0 +1,35 @@
+.row{
+    background-image: url('https://images.pexels.com/photos/616404/pexels-photo-616404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    color: black;
+    font-size:large;
+    
+    
+    
+    
+    
+}
+table{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    
+}
+tr,td,th{
+    padding: 10px;
+    border: 2px solid;
+
+}
+/* .main{
+    margin-top: 50px;
+    background-image: url('https://img.freepik.com/free-photo/fresh-colourful-ingredients-mexican-cuisine_23-2148254294.jpg?w=1380&t=st=1677007295~exp=1677007895~hmac=c465dae9866ab9bba0506f9b17ba4220f2b82ce1b409d1b34ccdc5536a463050');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+} */
